@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?9hxk7v');
+    src:  url('../fonts/icomoon.eot?9hxk7v#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?9hxk7v') format('truetype'),
+    url('../fonts/icomoon.woff?9hxk7v') format('woff'),
+    url('../fonts/icomoon.svg?9hxk7v#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 63rem;
+    height: 8rem;
+    background-color: #f7f7f7;
+    z-index: 10;
+    box-shadow: 0 -10px 5px #cccccc;
+}
+.footer .index,.resume,.assess,.userInfo{
+    width: 4rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+}
+.footer .index{
+
+}
+.footer .index .index_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../img/picture6.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .resume{
+    color: red;
+}
+.footer .resume .resume_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../img/picture5.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .assess .assess_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../images/assess_pic.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .userInfo .userInfo_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../images/userinfo_pic.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.resume_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 8rem;
+}
+.main_content .h_title{
+    width: 100%;
+    height: 8rem;
+    background-color: #fafafa;
+    font-size: 3rem;
+    line-height: 8rem;
+    color: #393939;
+    display: flex;
+    justify-content: center;
+}
+.resume_main .resume_card{
+    width: 60rem;
+    height: 16rem;
+    background-color: #f7f7f7;
+    border-radius: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.resume_main .resume_card .title{
+    width: 100%;
+    height: 3rem;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #b22329;
+}
+.resume_main .resume_card .detail{
+    width: 25rem;
+    height: 2rem;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #737373;
+    margin: 2rem 0;
+}
+.resume_main .resume_card .footer_card{
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0 1rem;
+    margin-top:1rem;
+    border-top: 2px solid #cccccc;
+}
+.resume_main .resume_card .footer_card .data{
+    width: 30rem;
+    height: 2rem;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #737070;
+}
+.resume_main .resume_card .footer_card .more{
+    width: 13rem;
+    height: 2rem;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #969696;
+}
+.resume_main .resume_card .footer_card .more i{
+    font-family: icomoon;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+.resume_detail{
+    width: 100%;
+    height: auto;
+    display: none;
+}
+.resume_detail .main_table{
+    width: 56rem;
+    height: 46rem;
+    margin: 2rem auto;
+}
+.resume_detail .main_table table{
+    width: 56rem;
+    height: 46rem;
+    background-color: #fafafa;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+.resume_detail .main_table table tr td:nth-child(1){
+    border-right: 2px solid #cccccc;
+    border-bottom: 2px solid #cccccc;
+    width: 20rem;
+}
+.resume_detail .main_table table tr td:nth-child(2){
+    border-bottom: 2px solid #cccccc;
+    width: 36rem;
+}
+.resume_detail .h_title{
+    width: 63rem;
+    height: 8rem;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+.resume_detail .h_title i{
+    font-family: icomoon;
+    width: 8rem;
+    height: 8rem;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #444444;
+}
+.resume_detail .h_title .title{
+    width: 19rem;
+    height: 8rem;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #393939;
+}
+.resume_detail .h_title .blank{
+    width: 4rem;
+    height: 2rem;
+}
+
+
+
+
+

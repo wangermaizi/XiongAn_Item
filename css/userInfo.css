@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?9hxk7v');
+    src:  url('../fonts/icomoon.eot?9hxk7v#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?9hxk7v') format('truetype'),
+    url('../fonts/icomoon.woff?9hxk7v') format('woff'),
+    url('../fonts/icomoon.svg?9hxk7v#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 63rem;
+    height: 8rem;
+    background-color: #f7f7f7;
+    z-index: 10;
+    box-shadow: 0 -10px 5px #cccccc;
+}
+.footer .index,.resume,.assess,.userInfo{
+    width: 4rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+}
+.footer .index{
+
+}
+.footer .index .index_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../img/picture6.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .resume .resume_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../images/resume_pic.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .assess .assess_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../images/assess_pic.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .userInfo{
+    color: red;
+}
+.footer .userInfo .userInfo_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../images/userActive_03.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/*开始制作信息*/
+.header{
+    width: 100%;
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafafa;
+}
+.header .header_content{
+    width: 13rem;
+    height: 3rem;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #393939;
+}
+.information{
+    display: flex;
+    flex-direction: column;
+}
+.information .ifmHeader{
+    width: 100%;
+    height: 23rem;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ifmHeader .img{
+    width: 13rem;
+    height: 13rem;
+}
+.ifmHeader .img img{
+    width: 13rem;
+    height: 13rem;
+}
+.ifmHeader .name{
+    width: 16rem;
+    height: 3rem;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #565656;
+    text-align:center;
+}
+.ifmBody{
+    margin-top: 3rem;
+    width: 100%;
+    height: auto;
+}
+.ifmBody table{
+    width: 100%;
+    height: auto;
+    color: #565656;
+    font-size: 2rem;
+}
+.ifmBody table tr{
+    width: 100%;
+    height: 6rem;
+    background-color: #f7f7f7;
+    border-bottom: 2rem;
+}
+.ifmBody table tr td:nth-child(1){
+    width: 16rem;
+    padding-left: 3rem;
+    height: auto;
+}
+.ifmBody table tr td:nth-child(2){
+    text-align: right;
+    padding-right: 2rem;
+}
+.footerBtm{
+    padding-bottom: 8rem;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+}
+.exitBtn{
+    width: 100%;
+    height: 6rem;
+    background-color: #f7f7f7;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #636363;
+    text-align: center;
+    line-height: 6rem;
+}
+.log_in{
+    display: none;
+    background-color: #fafafa;
+}
+.log_in .header{
+    width: 100%;
+    height: 9rem;
+    text-align: center;
+    line-height: 9rem;
+    color:#262626;
+    font-size: 5rem;
+}
+.log_in .center{
+    margin-top: 5rem;
+    width: 100%;
+    height: auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.log_in .center .title{
+    width: 20rem;
+    height: 5rem;
+    font-size: 5rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #b22329;
+}
+.log_in .center .img{
+    margin-top: 9rem;
+    width: 56rem;
+    height: 11rem;
+    background-image: url("../images/gongrenzhijia.png");
+    background-size: contain;
+}
+.license{
+    display: none;
+}
+.license .header{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+}
+.license .header .lfBtn{
+    width: 12rem;
+    height: 3rem;
+    color: #444444;
+    font-size: 2rem;
+}
+.license .header .lfBtn i{
+    font-family: icomoon;
+    font-style: normal;
+    font-size: 2rem;
+}
+.license .header .title{
+    width: 20rem;
+    height: 3rem;
+    font-size: 3rem;
+    color: #262626;
+}
+.license .header .blank{
+    width: 4rem;
+    height: 2rem;
+}
+.verify{
+    width: 100vw;
+    height: 100vh;
+    background-color: #fafafa;
+}
+.verify .header{
+    width: 100%;
+    height: 7rem;
+    text-align: center;
+    line-height: 4rem;
+    font-size: 3rem;
+    color: #262626;
+}
+.verify form{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.verify form label{
+    width: 57rem;
+    height: 6rem;
+    background-color: #f7f7f7;
+    border: solid 2px #b5b5b5;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+}
+.verify form label input{
+    border: none;
+    outline: none;
+    width: 52rem;
+    height: 100%;
+    font-size: 3rem;
+    background-color: #fafafa;
+}
+form .tip{
+    width: 57rem;
+    height: 4rem;
+    font-size: 2rem;
+    color: red;
+}
+.clear{
+    display: block;
+    font-family: icomoon;
+    font-style: normal;
+    font-size: 4rem;
+}
+.verify form button{
+    margin-top: 2rem;
+    width: 57rem;
+    height: 6rem;
+    background-color: #b22329;
+    border-radius: 1rem;
+    font-size: 2rem;
+    color: #fafafa;
+    text-align: center;
+    line-height: 6rem;
+}
+
+
+
+

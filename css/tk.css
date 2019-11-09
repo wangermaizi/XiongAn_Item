@@ -1,0 +1,79 @@
+.zhezhao{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.alert{
+    width: 43rem;
+    height: 15rem;
+    background-color: #f8f8f8;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.alert .header{
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    height: 7.8rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.3rem;
+}
+.alert .header .title{
+    font-size: 2.3rem;
+    font-weight: 900;
+}
+.alert .header .close{
+    font-weight: 300;
+    color: #cccccc;
+    font-size: 2.3rem;
+}
+.alert .header .close:hover{
+    color: orange;
+}
+.alert .main{
+    flex: 1;
+    padding: 0.3rem 0.1rem;
+    display: flex;
+    font-size: 2.3rem;
+}
+.alert .main .detail{
+    font-size: 0.18rem;
+    flex: 1;
+}
+.alert .main img{
+    width: 1.5rem;
+    height: 100%
+}
+.alert .btnList{
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.3rem;
+}
+.alert .btnList .btn{
+    height: 8rem;
+    width: 50%;
+    text-align: center;
+    line-height: 8rem;
+    padding: 0 1.05rem;
+    font-size:2.3rem;
+}
+.alert .btnList .btn:nth-child(1){
+    border-right: 2px solid #cccccc;
+}
+.alert .btnList .btn:nth-child(2){
+
+}
+.current{
+
+}

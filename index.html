@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>雄安实名制移动端_首页</title>
+    <meta name="viewport" content="width=1004, user-scalable=0">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <script src="js/Responsive_layout.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/autoPlay.css" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <div class="blank"></div>
+        <div class="title">首页</div>
+        <div class="notice">
+            <div class="notice_pic"></div>
+            通知
+        </div>
+    </div>
+    <div class="main_news">
+        <div class="autoPlay"></div>
+        <div class="autoContent">
+            <div class="scroll"></div>
+        </div>
+    </div>
+    <div class="main_content">
+        <div class="Training" @click="Jump_other_Web()">
+            <div class="Thead">
+                <div class="Thead_main">
+                    <div class="ico"></div>
+                    <div class="title">
+                        {{title}}
+                    </div>
+                </div>
+                <div class="more"></div>
+            </div>
+            <div class="Tdetail">{{detail}}</div>
+        </div>
+        <div class="pay">
+            <div class="pay_money">
+                <div class="Thead">
+                    <div class="ico"></div>
+                    <div class="title">
+                        {{title}}
+                    </div>
+                    <div class="more_detail" @click="showAllWage()">
+                        <div class="more"></div>
+                        <div class="more1">{{more}}</div>
+                    </div>
+                </div>
+                <div class="moneyDetail">
+                    <div class="lfBtn" @click="sub()"></div>
+                    <div class="money" v-for="(item,index) in mycurrentWage(allWage,start)[0]">
+                        <div class="data">
+                            {{item.date}}
+                        </div>
+                        <div class="moneyNum">
+                            {{item.moneyNum | showMoney}}
+                        </div>
+                    </div>
+                    <div class="rgBtn" @click="addNum()"></div>
+                </div>
+            </div>
+            <div class="showAllwage">
+                <div class="header">
+                    <div class="left_part" @click="index_back()">
+                        <div class="ico"></div>
+                        <div class="index">首页</div>
+                    </div>
+                    <div class="center_part">工资</div>
+                    <div class="blank"></div>
+                </div>
+                <div class="calendar_checked">
+                    <form action="javascript:void (0)" method="get">
+                        <div class="check_pay">
+                            <label for="checked_month">
+                                <!--<div class="glass"></div>-->
+                                <input type="text" id="checked_month" class="checked_month">
+                                <!--<span class="calendar_ico"></span>-->
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="wageList" v-for="(item,index) in allWage">
+                    <div class="wageItem">
+                        <div class="moneyNum">
+                            {{item.moneyNum | showMoney}}
+                        </div>
+                        <div class="moneyIn_ico" :date-set=index @click="downloadWage(index)"></div>
+                        <div class="line"></div>
+                        <div class="footer_item">
+                            <div class="date">{{item.date}}</div>
+                            <div class="detail" :date-set=index @click="checked_detail(index)">
+                                <div class="know_more">了解详情</div>
+                                <div class="moreIco"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--显示详情-->
+            <div class="display_details">
+                <div class="header">
+                    <div class="left_part" @click="wage_back()">
+                        <div class="ico"></div>
+                        <div class="index">工资列表</div>
+                    </div>
+                    <div class="center_part">{{allWage[current].month}}月工资详情</div>
+                    <div class="blank"></div>
+                </div>
+                <div class="table_detail">
+                    <table>
+                        <tr>
+                            <td>代发年月</td>
+                            <td>{{allWage[current].date}}</td>
+                        </tr>
+                        <tr>
+                            <td>银行账号</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>所在企业</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>实发合计</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>基本工资</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>绩效工资</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>住房补贴</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>过节费</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>应发合计</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>扣个人所得税</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>扣工会费</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>扣养老保险</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>扣医疗保险</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>扣生育保险</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>扣失业保险</td>
+                            <td>---</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="index">
+            <div class="index_pic"></div>
+            首页
+        </div>
+        <div class="resume">
+            <div class="resume_pic"></div>
+            工作履历
+        </div>
+        <div class="assess">
+            <div class="assess_pic"></div>
+            用工评价
+        </div>
+        <div class="userInfo">
+            <div class="userInfo_pic"></div>
+            我的
+        </div>
+    </div>
+    <!--显示通知-->
+    <div class="notice-index">
+        <div class="header">
+            <div class="left_part">
+                <div class="ico"></div>
+                <div class="index">首页</div>
+            </div>
+            <div class="center_part">通知公告</div>
+            <div class="blank"></div>
+        </div>
+        <div class="main_notice" id="main_notice">
+            <div class="notice_list" v-for="(item,index) in noticeList" @click="detailDisplay(index)">
+                <div class="data">{{item.data}}</div>
+                <div class="main">
+                    <div class="title">{{item.title}}</div>
+                    <div class="content">{{item.content}}</div>
+                    <div class="notice_footer">
+                        <div class="announcer">{{item.announcer}}</div>
+                        <div class="more">
+                            查看更多详情
+                            <i></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--具体通知显示-->
+            <div class="detail" v-bind:id="index" style="display: none">
+                <div class="header">
+                    <div class="ico" @click="displayDetailNone(current)">通知列表</div>
+                    <div class="index">{{noticeList[current].title}}</div>
+                    <div class="blank"></div>
+                </div>
+                <div class="detail_main">
+                    <div class="title">{{noticeList[current].title_se}}</div>
+                    <div class="data">{{noticeList[current].data}}</div>
+                    <div class="content">{{noticeList[current].plan}}</div>
+                    <div class="img"><img :src="noticeList[current].img" alt=""></div>
+                    <div class="announcer">{{noticeList[current].announcer}}</div>
+                    <div class="date">{{noticeList[current].data}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--显示通知结束-->
+    <script src="js/autoPlay.js"></script>
+    <script src="js/vue.js" type="text/javascript"></script>
+    <script src="js/autoPlay.js" type="text/javascript"></script>
+    <script src="js/touchSwiper.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+    <script>
+        const Training = new Vue({
+            el:'.Training',
+            data:{
+                title:'安全教育培训',
+                detail:'请积极参与安全教育培训哦，答题赢大奖！'
+            },
+            methods:{
+                Jump_other_Web(){
+                    location.href="other_html/Safety_education_training.html"
+                }
+            }
+        });
+        const pay = new Vue({
+            el:'.pay',
+            data:{
+                more:'更多',
+                title: '我的工资',
+                current:0,
+                start:0,
+                allWage:[{
+                        date:'2018-4',
+                        moneyNum:7231,
+                        month:'4'
+                    },
+                    {
+                        date:'2018-5',
+                        moneyNum:7341,
+                        month:'5'
+                    },
+                    {
+                        date:'2018-6',
+                        moneyNum:8848,
+                        month:'6'
+                    },
+                    {
+                        date:'2018-7',
+                        moneyNum:8348,
+                        month:'7'
+                    },
+                    {
+                        date:'2018-8',
+                        moneyNum:8348,
+                        month:'8'
+                    },
+                    {
+                        date:'2018-9',
+                        moneyNum:8348,
+                        month:'9'
+                    },
+                    {
+                        date:'2018-10',
+                        moneyNum:8348,
+                        month:'10'
+                    },
+                ],
+            },
+            methods:{
+                index_back(){
+                    const header = document.querySelector('.header');
+                    const main_news = document.querySelector('.main_news');
+                    const footer = document.querySelector('.footer');
+                    const Training = document.querySelector('.Training');
+                    const pay_money = document.querySelector('.pay_money');
+                    header.style.display = 'flex';
+                    main_news.style.display = 'block';
+                    footer.style.display = 'flex';
+                    Training.style.display = 'block';
+                    pay_money.style.display = 'block';
+                    const pay = document.querySelector('.pay');
+                    pay.style.marginTop = '2rem';
+                    pay.style.width = '60rem';
+                    pay.style.height = '18rem';
+                    const showAllwage = document.querySelector('.showAllwage');
+                    showAllwage.style.display = 'none'
+                },
+                mycurrentWage:function (allWage,star) {
+                    let newArr = [];
+                    let result = allWage.slice(star,star+3);
+                    newArr.push(result);
+                    return newArr;
+                },
+                showAllWage(){
+                    this.closeOther();
+                    const pay = document.querySelector('.pay');
+                    pay.style.marginTop = '0';
+                    pay.style.width = '100%';
+                    pay.style.height = 'auto';
+                    const showAllwage = document.querySelector('.showAllwage');
+                    showAllwage.style.display = 'block'
+                },
+                closeOther(){
+                    const header = document.querySelector('.header');
+                    const main_news = document.querySelector('.main_news');
+                    const footer = document.querySelector('.footer');
+                    const Training = document.querySelector('.Training');
+                    const pay_money = document.querySelector('.pay_money');
+                    header.style.display = 'none';
+                    main_news.style.display = 'none';
+                    footer.style.display = 'none';
+                    Training.style.display = 'none';
+                    pay_money.style.display = 'none';
+                },
+                sub(e){
+                    if (this.start>0){
+                        this.start--;
+                    }else{
+                        return false
+                    }
+                },
+                addNum(e){
+                    if (this.start<this.allWage.length-3){
+                        this.start++
+                    }else{
+                        return false
+                    }
+                },
+                checked_detail(index){
+                    this.current = index;
+                    const showAllwage = document.querySelector('.showAllwage');
+                    showAllwage.style.display = 'none';
+                    const display_details = document.querySelector('.display_details')
+                    display_details.style.display = 'block'
+                },
+                wage_back(){
+                    const showAllwage = document.querySelector('.showAllwage');
+                    showAllwage.style.display = 'block';
+                    const display_details = document.querySelector('.display_details')
+                    display_details.style.display = 'none';
+                },
+                downloadWage(index){
+                    console.log('下载具体内容' + index);
+                }
+            },
+            computed:{
+
+            },
+            filters:{
+                showMoney(money){
+                    return money.toFixed(2) + '元'
+                }
+            }
+        });
+
+        //通知新闻
+        const main_notice = new Vue({
+            el:'.main_notice',
+            data:{
+                noticeList:[{data:'2018-04-25  16：36：18',
+                    title:'天气预警',
+                    content:'明日有大到暴雨，请注意安全',
+                    img:'images/notice_detail_img_03.png',
+                    announcer:'A施工总包',
+                    title_se:'今天下午有暴雨',
+                    plan:'请各个班组人员及时准备各种事宜，妥善\n' +
+                        '施工！！！'}],
+                current:0,
+            },
+            methods:{
+                detailDisplay(index){
+                    const main_notice = document.querySelector('.notice-index');
+                    let detailDiv = document.querySelectorAll('.notice_list');
+                    this.current = index;
+                    if (this.current == index) {
+                        detailDiv.forEach(function (item,index) {
+                            item.style.display = 'none';
+                        });
+                        let header = document.querySelector('.notice-index .header');
+                        header.style.display = 'none';
+                        let main_detailDiv = document.querySelector('.main_notice .detail');
+                        main_detailDiv.style.display = 'block';
+                    }
+                },
+                displayDetailNone(index){
+                    this.current = index;
+                    let detailDiv = document.querySelectorAll('.notice_list');
+                    console.log(detailDiv[this.current]);
+                    if (this.current == index) {
+                        console.log(this.current);
+                        detailDiv.forEach(function (item, index) {
+                            item.style.display='flex';
+                            item.style.marginTop = '1.5rem'
+                        });
+                        let header = document.querySelector('.notice-index .header');
+                        header.style.display = 'flex';
+                        const detail = document.querySelector('.main_notice .detail');
+                        detail.style.display = 'none';
+
+                    }
+
+                }
+            }
+        });
+        //滚动新闻效果
+        const scrollNew = document.querySelector('.scroll');
+        console.log(scrollNew);
+        //获取父元素宽度
+        const parentWidth = scrollNew.clientWidth;
+        //初识化一下
+        scrollNew.innerHTML = '';
+        const news = ['头条：珠海今日港珠澳大桥通车，农民工兄弟有福了','头条：朋友你好像条狗哟，农民工兄弟有福了','头条：垃圾腾讯毁我钱财耗我清除，农民工兄弟有福了','头条：珠海今日港珠澳大桥通车，农民工兄弟有福了'];
+        let starNum = 0;
+        const msgDiv = document.createElement('div');
+        msgDiv.style.position = 'absolute';
+        msgDiv.style.whiteSpace = 'nowrap';
+        msgDiv.style.left = (parentWidth-msgDiv.clientWidth)+'px';
+        console.log(msgDiv.offsetLeft);
+        msgDiv.innerHTML = news[starNum];
+        scrollNew.appendChild(msgDiv);
+        const reg = /d+/;
+        let maLeft = parentWidth-msgDiv.clientWidth;
+        const fn1 = setInterval(function () {
+            let leftNum = msgDiv.style.left.replace('px','');
+            let num = parseInt(leftNum);
+            if (num <= -msgDiv.clientWidth) {
+                starNum++;
+                if(news[starNum] != undefined){
+                    msgDiv.innerHTML = news[starNum];
+                    maLeft = parentWidth;
+                }else{
+                    clearInterval(fn1);
+                    scrollNew.innerHTML = '';
+                }
+            }
+            msgDiv.style.left = maLeft+'px';
+            maLeft -= 16;
+        },100);
+
+        //插入轮播图
+        const imgList = ['img/picture1.jpg','img/picture2.webp','img/picture3.webp','img/picture4.webp'];
+        const swiper1 = new Swiper('.autoPlay',imgList);
+
+        //增加手势
+        const autoplay = document.querySelector('.autoPlay');
+        console.log(autoplay);
+        const rightBtn = document.querySelector('.autoPlay .btn .rightbtn');
+        const leftBtn = document.querySelector('.autoPlay .btn .leftbtn');
+        xx.init(autoplay);
+        autoplay.addEvent('swiperLeft',function () {
+            leftBtn.onclick()
+        });
+        autoplay.addEvent('swiperRight',function () {
+            rightBtn.onclick()
+        });
+
+        //设置跳转页面
+        const resumeDiv = document.querySelector('.resume');
+        resumeDiv.onclick = function () {
+            location.href='other_html/resume.html';
+        };
+        //用工评价
+        const assessDiv = document.querySelector('.assess');
+        assessDiv.onclick = function () {
+            location.href='other_html/assess.html';
+        };
+        //员工中心
+        const userInfoDiv = document.querySelector('.userInfo');
+        userInfoDiv.onclick = function () {
+            location.href='other_html/userInfo.html';
+        }
+    </script>
+</body>
+</html>

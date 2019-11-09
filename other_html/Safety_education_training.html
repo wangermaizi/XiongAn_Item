@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>安全教育培训</title>
+    <script src="../js/Responsive_layout.js"></script>
+    <meta name="viewport" content="width=1004, user-scalable=0">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face {
+            font-family: 'icomoon';
+            src:  url('../fonts/icomoon.eot?9hxk7v');
+            src:  url('../fonts/icomoon.eot?9hxk7v#iefix') format('embedded-opentype'),
+            url('../fonts/icomoon.ttf?9hxk7v') format('truetype'),
+            url('../fonts/icomoon.woff?9hxk7v') format('woff'),
+            url('../fonts/icomoon.svg?9hxk7v#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        .header{
+            width: 63rem;
+            height: 6.5rem;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            align-items: center;
+        }
+        .header .left_part {
+            width: 7rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+        }
+        .header .left_part .ico {
+            font-family: icomoon;
+            font-style: normal;
+            font-size: 2rem;
+        }
+        .header .left_part .index {
+            font-size: 2rem;
+            font-weight: normal;
+            font-stretch: normal;
+            color: #444444;
+        }
+        .header .center_part {
+            width: 22rem;
+            height: 3rem;
+            font-size: 3rem;
+            font-weight: normal;
+            font-stretch: normal;
+            color: #393939;
+        }
+        .header .blank {
+            width: 1rem;
+            height: 1rem;
+        }
+        .content{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .main_content{
+            width:62.75rem ;
+            height:62.125rem;
+            position: relative;
+            background-image: url("../images/safety_training_03.png");
+            background-size: 62.75rem 62.125rem;
+            background-repeat: no-repeat;
+        }
+        .main_content form{
+            width: 39rem;
+            height: 28.44rem;
+            position: absolute;
+            left: 12.125rem;
+            bottom: 3rem;
+        }
+
+        form label{
+            width: 35.75rem;
+            height: 3.5rem;
+        }
+        .main_content form label:nth-child(1){
+            position: absolute;
+            top: 7.22rem;
+            left: 1rem;
+            margin-bottom: 2rem;
+        }
+        form input{
+            width: 35.75rem;
+            height: 3.5rem;
+            border: none;
+            outline: none;
+            background-color: #10447d;
+            font-size: 2rem;
+            text-indent: 4rem;
+        }
+        .main_content form label:nth-child(2){
+            position: absolute;
+            top: 13.5rem;
+            left: 1rem;
+        }
+        form button{
+            position: absolute;
+            bottom: 4rem;
+            left: calc(50% - 9rem);
+            background-color: rgba(0,0,0,0);
+            outline: none;
+            border: none;
+            width: 17.56rem;
+            height: 5.0625rem;
+        }
+        .error_tip{
+            width:62.75rem ;
+            height:62.125rem;
+            display: none;
+            position: relative;
+        }
+        .error_tip .img{
+            background-image: url("../images/error_tip_03.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 21.56rem;
+            height: 21.56rem;
+            position: absolute;
+            left: calc(50% - 10.78rem);
+            top: 13.6875rem;
+        }
+        .error_tip .tip_content{
+            font-size: 2.6rem;
+            color: rgb( 57, 57, 57 );
+            position: absolute;
+            left: 13.68rem;
+            top: 37.45rem;
+        }
+        .error_tip .error_code{
+            font-size: 2rem;
+            color: rgb( 57, 57, 57 );
+            position: absolute;
+            left: calc(50% - 6.76rem);
+            bottom: 1rem;
+            z-index: 466;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <div class="left_part" @click="index_back()">
+                <div class="ico"></div>
+                <div class="index">首页</div>
+            </div>
+            <div class="center_part">安全教育培训</div>
+            <div class="blank"></div>
+        </div>
+        <div class="main_content">
+            <form action="javascript:void (0)" method="get">
+                <label for="userName">
+                    <input type="text" id="userName" name="userName" hidden="hidden">
+                </label>
+                <label for="password">
+                    <input type="password" id="password" name="userName" hidden="hidden">
+                </label>
+                <button type="submit"></button>
+            </form>
+        </div>
+        <div class="error_tip">
+            <div class="img"></div>
+            <div class="tip_content">抱歉，我们努力了，但页面还是丢了</div>
+            <div class="error_code">错误代码：404</div>
+        </div>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="../js/jQuery.js"></script>
+    <script>
+        //等待所有的DOM元素加载完毕之后
+        const jj = $.noConflict();
+        jj(document).ready(function () {
+            jj('.header .left_part').click(function () {
+                if (jj(this).children('.index').text() == '首页') {
+                    location.href='../index.html';
+                }else{
+                    jj('.left_part').children('.index').text('首页').end().next().text('安全教育培训');
+                    jj('.main_content').show();
+                    jj('.error_tip').hide();
+                }
+            });
+            //仿制input标签
+            jj('label').eq(0).click(function () {
+                jj('#userName').attr('hidden',false)
+            }).end().eq(1).click(function () {
+                jj('#password').attr('hidden',false)
+            });
+            jj('#userName').blur(function (e) {
+                console.log(e);
+                if (jj(this).val().length == 0){
+                    jj(this).attr('hidden',true)
+                }else{
+                    jj(this).attr('hidden',false)
+                }
+            });
+            jj('#password').blur(function (e) {
+                if (jj(this).val().length == 0){
+                    jj(this).attr('hidden',true)
+                }else{
+                    jj(this).attr('hidden',false)
+                }
+            });
+            //点击跳转页面
+            jj('form button').click(function () {
+                console.log('跳转');
+                jj('.left_part').children('.index').text('返回').end().next().text('错误提示');
+                jj('.main_content').hide();
+                jj('#userName').val('').attr('hidden',true);
+                jj('#password').val('').attr('hidden',true);
+                jj('.error_tip').show();
+            });
+        })
+    </script>
+</body>
+</html>

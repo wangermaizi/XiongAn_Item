@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>员工中心</title>
+    <link rel="stylesheet" href="../css/userInfo.css" type="text/css">
+    <meta name="viewport" content="width=1004, user-scalable=0">
+    <script src="../js/Responsive_layout.js"></script>
+    <link rel="stylesheet" href="../css/form.css" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <div class="header_content">
+            个人信息
+        </div>
+    </div>
+    <div class="information">
+        <div class="ifmHeader">
+            <div class="img"><img :src=info.img alt=""></div>
+            <div class="name">
+                {{info.name}}   {{info.sex}}
+            </div>
+        </div>
+        <div class="ifmBody">
+            <table>
+                <tr>
+                    <td>手机号码</td>
+                    <td>{{info.phone}}</td>
+                </tr>
+                <tr>
+                    <td>身份证号</td>
+                    <td>{{info.ID_number}}</td>
+                </tr>
+                <tr>
+                    <td>出生年月</td>
+                    <td>{{info.date}}</td>
+                </tr>
+                <tr>
+                    <td>常住地址</td>
+                    <td>{{info.address}}</td>
+                </tr>
+                <tr>
+                    <td>有效期</td>
+                    <td>{{info.validity}}</td>
+                </tr>
+                <tr>
+                    <td>培训记录</td>
+                    <td>{{info.training_record}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="footerBtm">
+        <div class="exitBtn" @click="exit">退出登录</div>
+    </div>
+    <!--底部-->
+    <div class="footer">
+        <div class="index">
+            <div class="index_pic"></div>
+            首页
+        </div>
+        <div class="resume">
+            <div class="resume_pic"></div>
+            工作履历
+        </div>
+        <div class="assess">
+            <div class="assess_pic"></div>
+            用工评价
+        </div>
+        <div class="userInfo">
+            <div class="userInfo_pic"></div>
+            我的
+        </div>
+    </div>
+    <div class="log_in">
+        <div class="header">
+            <div class="head_content">登录</div>
+        </div>
+        <div class="center">
+            <div class="title">工友之家</div>
+            <div class="img"></div>
+        </div>
+        <div class="formCheck">
+            <form action="javascript:void (0)" method="get">
+                <div class="register-box">
+                    <label for="username" class="username">
+                        <input type="text" maxlength="18" name="username" id="username" placeholder="请输入身份证号">
+                    </label>
+                    <div class="trueico"></div>
+                    <div class="tip"></div>
+                </div>
+                <div class="register-box">
+                    <label for="username" class="other_label">
+                        <input type="text" maxlength="20" name="username" id="phone" placeholder="请输入手机号">
+                    </label>
+                    <div class="trueico"></div>
+                    <div class="tip"></div>
+                </div>
+                <div class="submit_btn">
+                    <button type="submit" id="submit_btn">发送验证码</button>
+                </div>
+                <div class="arguement">
+                    <label for="xieyi">
+                        <input type="checkbox" id="xieyi" hidden="hidden">
+                        <div class="circle"></div>
+                    </label>
+                    阅读并同意
+                    <a href="javascript:void (0)">用户协议</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="verify">
+        <!--验证码页面-->
+        <div class="header">确认验证码</div>
+        <form action="javascript:void (0)" method="get">
+            <div class="tip"></div>
+            <label for="verify_code">
+                <input type="text" id="verify_code">
+                <span class="clear"></span>
+            </label>
+            <button type="submit" class="confirmBtn">确认并登录</button>
+        </form>
+    </div>
+    <div class="license">
+        <div class="header">
+            <div class="lfBtn">
+                <i></i>
+                返回登录
+            </div>
+            <div class="title">用户使用协议</div>
+            <div class="blank"></div>
+        </div>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="../js/info.js" type="text/javascript"></script>
+    <script src="../js/jQuery.js" type="text/javascript"></script>
+    <script>
+        //
+        const imformation = new Vue({
+            el:'.information',
+            data:{
+                info:{
+                    img:'aaaaa',
+                    name:'王大年',
+                    sex:'男',
+                    phone:'18000005888',
+                    ID_number:'166000196600000000',
+                    date:'1966-08-08',
+                    address:'广东省珠海市高新区创新三路60号...',
+                    validity:'2088-08-27',
+                    training_record:'---'
+                }
+            },
+        });
+        //设置退出点击事件
+        const exitBtn = new Vue({
+            el:'.footerBtm',
+            methods:{
+                exit(){
+                    const exitBtn = document.querySelector('.exitBtn');
+                    const headerDiv = document.querySelector('.header');
+                    const informationDiv = document.querySelector('.information');
+                    const footerBtm = document.querySelector('.footerBtm');
+                    const footerDiv = document.querySelector('.footer');
+                    const log_inDiv = document.querySelector('.log_in');
+                    headerDiv.style.display = 'none';
+                    informationDiv.style.display = 'none';
+                    footerBtm.style.display = 'none';
+                    footerDiv.style.display = 'none';
+                    log_inDiv.style.display = 'block';
+                }
+            }
+        });
+        //等待所有DOM元素加载完毕之后
+        $(document).ready(function () {
+            var jj = $.noConflict();
+            jj('.verify').hide();
+            var $IDture = false;
+            var $phoneTrue = false;
+            var $xieyi = false;
+            jj('input').eq(0).focus(function () {
+                if (jj(this).val().length == 0){
+                    jj(this).parent().next().next('.tip').text("请按照标准身份证号格式进行输入").css({color:'rgb(204,204,204)'})
+                }
+            }).end().eq(1).focus(function () {
+                if(jj(this).val().length==0){
+                    jj(this).parent().next().next(".tip").text("验证完后，你可以使用该手机登陆和找回密码").css({color:'rgb(204,204,204)'});
+                }
+            });
+            //判断身份证是否正确
+            jj('input').eq(0).blur(function (e) {
+                const reg = /^\d{17}[xX0-9]$/;
+                if (!reg.test(jj(this).val())){
+                    jj(this).parent().next().next('.tip').text('请填写正确内容').css({
+                        color:'red'
+                    });
+                    jj(this).parent().next('div').attr('class','falseico');
+                    $IDture = false
+                }else{
+                    jj(this).parent().next().next('.tip').text('');
+                    jj(this).parent().next('div').attr('class','trueico');
+                    $IDture = true
+                }
+            }).end().eq(1).blur(function () {
+                //判断手机号码是否正确
+                const reg1 = /^1[345678]\d{9}$/;
+                if (!reg1.test(jj(this).val())){
+                    jj(this).parent().next().next('.tip').text('请填写正确手机号码').css({
+                        color:'red'
+                    });
+                    jj(this).parent().next('div').attr('class','falseico');
+                    $phoneTrue = false
+                } else{
+                    jj(this).parent().next().next('.tip').text('');
+                    jj(this).parent().next('div').attr('class','trueico');
+                    $phoneTrue = true
+                }
+            });
+            jj('#xieyi').click(function (e) {
+                if ($phoneTrue && $IDture) {
+                    if (!$xieyi) {
+                        $xieyi = true;
+                    }else{
+                        $xieyi = false;
+                    }
+                }else{
+                    return false;
+                }
+            });
+            //
+            console.log(jj('input'));
+            jj('#submit_btn').click(function () {
+                if ($xieyi && $phoneTrue && $IDture) {
+                    jj('.log_in').hide();
+                    jj('.verify').show();
+                    for (let i = 0; i < jj('input').length; i++) {
+                        jj('input').eq(i).val('');
+                        if(i == 2){
+                            jj('input').eq(i).click();
+                        }
+                    }
+                    $phoneTrue = false;
+                    $IDture = false;
+                    $xieyi = false;
+                }else {
+                    return false;
+                }
+            });
+            //点击跳转用户协议
+            jj('.arguement>a').click(function (e) {
+                e.preventDefault();
+                jj('.log_in').hide();
+                jj('.license').show();
+            });
+            //从协议返回登录页面
+            jj('.license .header .lfBtn').click(function () {
+                jj(this).parent().parent().hide();
+                jj('.log_in').show();
+            });
+            //通过验证码
+            jj('.confirmBtn').click(function (e) {
+                e.preventDefault();
+                const $reg = /^\d{4,6}$/;
+                if (!$reg.test(jj('#verify_code').val()) || jj('#verify_code').val().length == 0){
+                    jj('form .tip').text('输入错误,请重新填写4-6为验证码');
+                    return false;
+                }else{
+                    jj('.verify').hide();
+                    jj('.header').show();
+                    jj('.footerBtm').show();
+                    jj('.information').show();
+                    jj('.footer').show();
+                    jj('form .tip').text('');
+                }
+            });
+            //页面跳转
+            //回到主页
+            jj('.footer .index').click(function () {
+                location.href="../index.html"
+            });
+            //工作履历
+            jj('.footer .resume').click(function () {
+                location.href = "../other_html/resume.html"
+            });
+            //用工评价
+            jj('.footer .assess').click(function () {
+                location.href = "../other_html/assess.html"
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.formCheck{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form{
+    width: 57rem;
+    margin: auto;
+    margin-top: 100px;
+}
+form .register-box{
+    border: 1px solid #ddd;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+}
+form .register-box label{
+    width: 52rem;
+    height: 6rem;
+    line-height: 52px;
+    display: inline-block;
+}
+form .register-box input{
+    border: none;
+    outline: none;
+    border-left: 1px solid #cccccc;
+    width: 52rem;
+    height: 100%;
+    padding-bottom: 11px;
+    padding-top: 16px;
+    color: #666;
+    background-color: #f7f7f7;
+    font-size: 2rem;
+}
+form .register-box .trueico{
+    width: 5rem;
+    height: 5rem;
+    background-image: url("../images/true.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #f7f7f7;
+}
+form .register-box .falseico{
+    width: 5rem;
+    height: 5rem;
+    background-image: url("../images/false.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #f7f7f7;
+}
+form .register-box .tip{
+    position: absolute;
+    margin-top: 4rem;
+    font-size: 2rem;
+    color: rgb(204,204,204);
+}
+#code{
+    display: inline-block;
+    width: 100px;
+    height: 46px;
+    vertical-align: middle;
+    background-color: black;
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    margin-bottom: 4px;
+}
+.arguement{
+    margin-bottom: 40px;
+    font-size: 2rem;
+    display: flex;
+}
+#xieyi{
+    width: 3rem;
+    height: 3rem;
+    background-color: #b22329;
+}
+#xieyi:checked~.circle{
+    background-color: red!important;
+}
+.circle{
+    width: 3rem;
+    height: 3rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    border: 2px solid #cccccc;
+}
+.arguement a{
+    text-decoration: none;
+}
+
+.submit_btn button{
+    width: 57rem;
+    height: 6rem;
+    color: #fff;
+    background: #e22;
+    border: 0;
+    font-size: 3rem;
+}
+.register-box input:-webkit-autofill {
+    box-shadow: 0 0 0 300px white inset;
+}

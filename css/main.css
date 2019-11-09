@@ -1,0 +1,662 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?9hxk7v');
+    src:  url('../fonts/icomoon.eot?9hxk7v#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?9hxk7v') format('truetype'),
+    url('../fonts/icomoon.woff?9hxk7v') format('woff'),
+    url('../fonts/icomoon.svg?9hxk7v#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+.header{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+.header .blank{
+    width: 4rem;
+    height: 100%;
+}
+.header .title{
+    width: 6rem;
+    height: 3rem;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #393939;
+}
+.header .notice{
+    height: 6rem;
+    width: 4rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #6e6e6e;
+}
+.header .notice .notice_pic{
+    background-image: url("../images/notice.gif");
+    width: 4rem;
+    height: 4rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.main_news{
+    width: 100%;
+    height: 34rem;
+}
+.main_news .autoPlay{
+    width: 100%;
+    height: 29rem;
+    background-color: red;
+    position: relative;
+}
+.main_news .autoContent{
+    height: 5rem;
+    width: 100%;
+    position: relative;
+}
+.main_news .autoContent .scroll{
+    width: 100%;
+    height: 2.5rem;
+    top: 1rem;
+    font-size: 2rem;
+    color: #b4282d;
+    position: relative;
+    overflow: hidden;
+}
+.main_content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 8rem;
+    width: 100%;
+}
+.main_content .Training{
+    width: 60rem;
+    height: 10rem;
+    background-color: #f7f7f7;
+    box-shadow: 0rem 0rem 0rem 0rem rgba(44, 44, 44, 0.36);
+    margin-top: 2rem;
+}
+.main_content .Training .Thead{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main_content .Training .Thead .Thead_main .ico{
+    background-image: url("../images/Thead_ico.png");
+    width: 2rem;
+    height: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.main_content .Training .Thead .Thead_main{
+    display: flex;
+    align-items: center;
+}
+.main_content .Training .Thead .Thead_main .title{
+    width: 14rem;
+    height: auto;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #515151;
+}
+.more{
+    width: 3rem;
+    height: 2rem;
+    font-family: icomoon;
+    font-size: 3rem;
+    color: #515151;
+    font-style: normal;
+}
+.main_content .Training .Tdetail{
+    width: 39rem;
+    height: auto;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #515151;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+.main_content .pay{
+    width: 60rem;
+    height: 18rem;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 0 0 rgba(44, 44, 44, 0.36);
+    margin-top: 2rem;
+}
+.pay .Thead{
+    margin-top: 2rem;
+    width: 100%;
+    height: 4rem;
+}
+.pay .Thead .ico{
+    float: left;
+    background-image: url("../images/pay.png");
+    width: 2rem;
+    height: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.pay .Thead .title{
+    width: 14rem;
+    height: auto;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #515151;
+    float: left;
+}
+.pay .Thead .more_detail{
+    width: 7rem;
+    height: 3rem;
+    float: right;
+}
+.pay .Thead .more{
+    float: right;
+    align-items: center;
+    font-size: 3rem;
+}
+.pay .Thead .more1{
+    float: right;
+    font-size: 2rem;
+}
+.pay .moneyDetail{
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pay .moneyDetail .lfBtn,.rgBtn{
+    width: 2rem;
+    height: 2rem;
+}
+.pay .moneyDetail .lfBtn{
+    font-family: icomoon;
+    font-size: 2rem;
+}
+.pay .moneyDetail .rgBtn{
+    font-family: icomoon;
+    font-size: 2rem;
+}
+.pay .moneyDetail .money{
+    width: 10rem;
+    height: 8rem;
+    background-color: #b22329;
+    color: #f7f7f7;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 0.8rem;
+}
+.pay .moneyDetail .money .data{
+    width: 6rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+.money .moneyNum{
+    width: 11rem;
+    height: 2rem;
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #ffffff;
+}
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 63rem;
+    height: 8rem;
+    background-color: #f7f7f7;
+    z-index: 10;
+    box-shadow: 0 -10px 5px #cccccc;
+}
+.footer .index,.resume,.assess,.userInfo{
+    width: 4rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+}
+.footer .index{
+    color: red;
+}
+.footer .index .index_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../images/index_pic.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .resume .resume_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../images/resume_pic.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .assess .assess_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../images/assess_pic.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .userInfo .userInfo_pic{
+    width: 3rem;
+    height: 3rem;
+    background-image: url("../images/userinfo_pic.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.notice-index{
+    width: 63rem;
+
+}
+.notice-index .header{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fafafa;
+}
+.header .left_part{
+    width: 7rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+.header .left_part .ico{
+    font-family: icomoon;
+    font-style: normal;
+    font-size: 2rem;
+}
+.header .left_part .index{
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #444444;
+}
+.header .center_part{
+    width: 12rem;
+    height: 3rem;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #393939;
+}
+.header .blank{
+    width: 1rem;
+    height: 1rem;
+}
+.main_notice{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main_notice .notice_list{
+    width: 60rem;
+    height: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+.main_notice .notice_list .data{
+    width: 12rem;
+    height: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #737070;
+    margin: 1rem 0;
+}
+.main_notice .notice_list .main{
+    width: 60rem;
+    height: 16rem;
+    background-color: #f7f7f7;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+}
+.main_notice .notice_list .main .title{
+    width: 13rem;
+    height: 3rem;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #393939;
+    margin: 2rem 0 0 2rem;
+}
+.main_notice .notice_list .main .content{
+    width: 27rem;
+    height: 2rem;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #b22329;
+    margin: 3rem 0 0 2rem;
+}
+.main_notice .notice_list .main .notice_footer{
+    height: 2.5rem;
+    width: 52rem;
+    margin: 2rem 0 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main_notice .notice_list .main .notice_footer .announcer{
+    width: 9rem;
+    height: 3rem;
+    font-size: 1.4rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #737070;
+}
+.main_notice .notice_list .main .notice_footer .more{
+    width: 7.6rem;
+    height: 2rem;
+    font-size: 1rem;
+    color: #969696;
+}
+.main_notice .notice_list .main .notice_footer .more i{
+    font-style: normal;
+    font-size: 1.2rem;
+    float: right;
+}
+.main_notice .detail{
+    width: 100vw;
+    height: auto;
+}
+.main_notice .detail .header{
+    width: 63rem;
+    height: 8rem;
+    display: flex;
+}
+.main_notice .detail .header .ico{
+    font-family: icomoon;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+.main_notice .detail .header .index{
+    width: 12rem;
+    height: 3rem;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #393939;
+}
+.main_notice .detail .header .detail_main{
+    width: 9rem;
+    height: 11rem;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 0 0 rgba(44, 44, 44, 0.36);
+    border-radius: 5rem;
+}
+/*显示工资细节*/
+.showAllwage{
+    display: none;
+}
+.showAllwage .header{
+    width: 100%;
+    height: 6.5rem;
+    background-color: #fafafa;
+}
+.showAllwage .calendar_checked{
+    width: 100%;
+    height: 10rem;
+    background-color: #fafafa;
+}
+.showAllwage .calendar_checked form{
+    width: 60rem;
+    height: 5rem;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+.showAllwage .calendar_checked form .check_pay{
+    width: 60rem;
+    height: 5rem;
+    position: relative;
+    background-color: #e5e5e5;
+    border-radius: 3rem;
+}
+.showAllwage .calendar_checked form .check_pay .checked_month{
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    background-color: #e5e5e5;
+    border-radius: 3rem;
+    font-size: 2rem;
+    text-indent: 6rem;
+}
+.check_pay:after{
+    content: '';
+    background-image: url("../images/calendar.png");
+    width: 2rem;
+    height: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: calc(50% - 1rem);
+    right: 2rem;
+}
+.check_pay:before{
+    content: '';
+    background-image: url("../images/fangdajing.png");
+    width: 2rem;
+    height: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: calc(50% - 1rem);
+    left: 2rem;
+}
+.wageList{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+.wageList .wageItem{
+    width: 60rem;
+    height: 13rem;
+    background-color: #f7f7f7;
+    position: relative;
+    margin-top: 6rem;
+    border-radius: 1rem;
+}
+.wageList .wageItem .moneyNum{
+    width: 100%;
+    padding: 0 3rem;
+    padding-top: 2rem;
+    height: 6rem;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #b22329;
+}
+.wageItem .moneyIn_ico{
+    background-image: url("../images/moneyIn_03.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+.line{
+    width: 100%;
+    height: 2px;
+    background-color: #cccccc;
+    margin: 1rem 0;
+}
+.wageItem .footer_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    padding: 0 3rem;
+}
+.wageItem .footer_item .date{
+    width: 8rem;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #737070;
+}
+.wageItem .footer_item .detail{
+    width: 12rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+.wageItem .footer_item .detail .know_more{
+    width: 8rem;
+    height: 3rem;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #969696;
+}
+.wageItem .footer_item .detail .moreIco{
+    font-family: icomoon;
+    font-style: normal;
+    font-size: 2.5rem;
+    height: 3rem;
+    line-height: 3rem;
+}
+.display_details{
+    display: none;
+}
+.display_details .header .left_part{
+    width: 10rem;
+}
+.display_details .header .center_part{
+    width: 20rem;
+    height: 4rem;
+}
+.display_details .table_detail{
+    width: 100%;
+    height: auto;
+    padding-top: 2rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+.display_details .table_detail table{
+    width: 56rem;
+    height: 78rem;
+    background-color: #fafafa;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+.display_details .table_detail table tr td:nth-child(1){
+    border-right: 2px solid #cccccc;
+    border-bottom: 2px solid #cccccc;
+    width: 20rem;
+}
+.display_details .table_detail table tr td:nth-child(2){
+    border-bottom: 2px solid #cccccc;
+    width: 36rem;
+}
+#main_notice .detail_main{
+    width: 56rem;
+    height: 71rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f7f7f7;
+    box-shadow: 0 0.5rem 0 rgba(44, 44, 44, 0.36);
+    border-radius: 2rem;
+    margin: 2rem auto 18rem;
+    box-sizing: content-box;
+}
+#main_notice .detail_main .title{
+    width: 22rem;
+    height: 4rem;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #444444;
+    margin-top: 2rem;
+}
+#main_notice .detail_main .data{
+    width: 23rem;
+    height: 2rem;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #444444;
+    margin: 2rem 0 4rem 0;
+}
+#main_notice .detail_main .content{
+    width: 52rem;
+    height: 7rem;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    text-indent: 4rem;
+    color: #444444;
+}
+#main_notice .detail_main .img img{
+    width: 51rem;
+    height: 29rem;
+    margin-top: 5rem;
+    margin-bottom: 6rem;
+}
+#main_notice .detail_main .announcer{
+    width: 100%;
+    text-align: right;
+    height: 3rem;
+    font-size: 3rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #b22329;
+    margin-right: 5rem;
+}
+#main_notice .detail_main .date{
+    margin-top: 1rem;
+    width: 100%;
+    height: 2rem;
+    text-align: right;
+    font-size: 2rem;
+    font-weight: normal;
+    font-stretch: normal;
+    color: #444444;
+    margin-right: 6rem;
+}
